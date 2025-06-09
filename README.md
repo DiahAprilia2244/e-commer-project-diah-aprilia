@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lunelle Fashion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0b1d3a;
+      color: #fff;
+    }
+
+    header {
+      background-color: #102544;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffc0cb;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffc0cb;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to bottom, #0b1d3a, #142c54);
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      color: #ffc0cb;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    .produk-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      padding: 40px 20px;
+    }
+
+    .produk-item {
+      background-color: #1d3557;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      color: #fff;
+      text-align: center;
+    }
+
+    .produk-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .harga {
+      color: #ffd1dc;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    button {
+      background-color: #ffc0cb;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #ff9fbf;
+    }
+
+    #keranjang, #kategori, #tentang {
+      padding: 40px 20px;
+    }
+
+    footer {
+      background-color: #102544;
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+    }
+
+    .kategori-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .kategori-list li {
+      background-color: #26466d;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Lunelle Fashion</div>
+    <nav>
+      <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#kategori">Kategori</a></li>
+        <li><a href="#tentang">Tentang Kami</a></li>
+        <li><a href="#keranjang">🛒</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="beranda" class="hero">
+      <h1>Selamat Datang di Lunelle Fashion</h1>
+      <p>Temukan busana stylish dan feminin untuk setiap momen spesial Anda.</p>
+    </section>
+
+    <section id="produk">
+      <h2 style="text-align: center;">Produk Terbaru</h2>
+      <div class="produk-container">
+        <article class="produk-item">
+          <img src="Cute Dress.jpeg" alt="Cute Dress">
+          <h3>Cute Dress</h3>
+          <p>Dress feminin warna soft pink yang cocok untuk acara semi formal maupun santai.</p>
+          <p class="harga">Rp120.000</p>
+          <button onclick="tambahKeKeranjang('Cute Dress', 120000)">Tambah ke Keranjang</button>
+        </article>
+
+        <article class="produk-item">
+          <img src="blouse white.jpeg" alt="Blouse Putih">
+          <h3>Blouse Putih</h3>
+          <p>Blouse putih simpel, elegan, dan cocok untuk tampilan formal atau kasual.</p>
+          <p class="harga">Rp95.000</p>
+          <button onclick="tambahKeKeranjang('Blouse Putih', 95000)">Tambah ke Keranjang</button>
+        </article>
+
+        <article class="produk-item">
+          <img src="rok plisket.jpeg" alt="Rok Plisket">
+          <h3>Rok Plisket</h3>
+          <p>Rok plisket warna cokelat dengan bahan ringan yang nyaman digunakan.</p>
+          <p class="harga">Rp110.000</p>
+          <button onclick="tambahKeKeranjang('Rok Plisket', 110000)">Tambah ke Keranjang</button>
+        </article>
+
+        <article class="produk-item">
+          <img src="cardigan pink.jpeg" alt="Cardigan Pink">
+          <h3>Cardigan Pink</h3>
+          <p>Cardigan lembut warna pink pastel untuk tampil cute dan cozy.</p>
+          <p class="harga">Rp135.000</p>
+          <button onclick="tambahKeKeranjang('Cardigan Pink', 135000)">Tambah ke Keranjang</button>
+        </article>
+
+        <article class="produk-item">
+          <img src="tunik motif.jpeg" alt="Tunik Motif">
+          <h3>Tunik Motif</h3>
+          <p>Tunik motif floral yang manis dan anggun, cocok untuk tampil lebih feminim.</p>
+          <p class="harga">Rp105.000</p>
+          <button onclick="tambahKeKeranjang('Tunik Motif', 105000)">Tambah ke Keranjang</button>
+        </article>
+
+        <article class="produk-item">
+          <img src="Celana Kulot.jpeg" alt="Celana Motif Bunga">
+          <h3>Celana Motif Bunga</h3>
+          <p>Celana panjang dengan motif bunga kekinian untuk gaya chic dan santai.</p>
+          <p class="harga">Rp139.000</p>
+          <button onclick="tambahKeKeranjang('Celana Motif Bunga', 139000)">Tambah ke Keranjang</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="keranjang">
+      <h2>Keranjang Belanja</h2>
+      <ul id="daftar-keranjang"></ul>
+      <p id="total-belanja">Total: Rp0</p>
+    </section>
+
+    <section id="kategori">
+      <h2>Kategori</h2>
+      <ul class="kategori-list">
+        <li>Atasan</li>
+        <li>Bawahan</li>
+        <li>Dress</li>
+        <li>Setelan</li>
+        <li>Tunik</li>
+        <li>Cardigan</li>
+        <li>Outer</li>
+      </ul>
+    </section>
+
+    <section id="tentang">
+      <h2>Tentang Kami</h2>
+      <p>Lunelle Fashion hadir untuk para wanita yang ingin tampil anggun dan percaya diri dengan gaya yang elegan dan feminin. Kami menghadirkan pilihan busana terbaik dengan desain kekinian dan harga yang terjangkau.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Lunelle Fashion. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const daftarKeranjang = document.getElementById('daftar-keranjang');
+    const totalBelanja = document.getElementById('total-belanja');
+    let total = 0;
+
+    function tambahKeKeranjang(namaProduk, hargaProduk) {
+      const item = document.createElement('li');
+      item.textContent = `${namaProduk} - Rp${hargaProduk.toLocaleString()}`;
+      daftarKeranjang.appendChild(item);
+      total += hargaProduk;
+      totalBelanja.textContent = `Total: Rp${total.toLocaleString()}`;
+    }
+  </script>
+</body>
+
+</html>
